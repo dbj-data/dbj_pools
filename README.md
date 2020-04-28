@@ -1,4 +1,4 @@
-# dbj_pools
+# dbj_pools&trade;
 ## dbj spa with pools for memory management
 
 This is a C99 code. Built to be used in the Windows client or server.
