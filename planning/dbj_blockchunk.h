@@ -3,7 +3,9 @@
 /*
 (c) 2020 by dbj@dbj.org CC BY SA 4.0
 */
+#ifdef __cplusplus
 extern "C" {
+#endif // __cplusplus
 
 	// wherever feasible strong type concept is deployed
 	// STRong Type
@@ -12,21 +14,28 @@ extern "C" {
 
 #define DBJ_BLOCKCHUNK "dbj_blockchunk"
 
+	typedef enum CONST { one = 1, two = 2 } constants;
+
+	typedef struct STRUCT {
+		constants two;
+	} STRUCT  ;
+
 	static struct { int major; int minor; int patch; }
 	dbj_blockchunk_version = { 0,0,0 };
 
-	typedef enum {
-		// total memory taken by all the pools
-		dbj_blockchunk_max_num_of_pools = 0xFF,
-		//  total pool size
-		dbj_blockchunk_max_pool_byte_size = 10 * 0xFFFF,
-		// this is theoretycal
-		// in practice max pool byte size is an overarching constant
-		dbj_blockchunk_max_blocks = 0xFFFF,
-		// this defines max block size in bytes
-		dbj_blockchunk_max_chunk_size,
-		dbj_blockchunk_max_chunk_count
-	} dbj_blockchunk_constants;
+	static struct dbj_blockchunk_constants {
+			const int max_num_of_pools ;
+			const int max_pool_byte_size ;
+			const int max_blocks ;
+			const int max_chunk_size;
+			const int max_chunk_count;
+	} dbj_blockchunk_constants = {
+		  .max_num_of_pools		= 0xFF          // total memory taken by all the pools
+		, .max_blocks			= 0xFFFF 		// this is theoretycal/ in practice max pool byte size is an overarching constant
+		, .max_chunk_size		= 0xFFFF		// this defines max block size in bytes
+		, .max_chunk_count		= 0xFFFF
+		, .max_pool_byte_size   = 10 * 0xFFFF   //  total pool size
+	} ;
 
 	strong_type( int, dbj_blockchunk_id);
 	strong_type( int, dbj_blockchunk_chunk_size);
@@ -64,5 +73,8 @@ extern "C" {
 	// make a new pool
 	dbj_blockchunk_pool* dbj_blockchunk_new_pool();
 
+#ifdef __cplusplus
 } /* "C" */
+#endif // __cplusplus
+
 #endif // DBJ_BLOCKCHUNK_INC
