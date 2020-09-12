@@ -69,4 +69,6 @@ That will spectaluraly fail at runtime if casting or pointer arithmetics errors 
 
 [See it in action here.](https://godbolt.org/z/vMmFPH)
 
-(c) 2020 APR by dbj@dbj.org CC BY SA 4.0
+[Further R&D here](https://godbolt.org/z/asvx4a)
+
+(c) 2020 APR-SEP by dbj@dbj.org CC BY SA 4.0
