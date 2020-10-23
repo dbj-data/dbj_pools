@@ -31,7 +31,7 @@ extern "C" {
 			const int max_chunk_count;
 	} dbj_blockchunk_constants = {
 		  .max_num_of_pools		= 0xFF          // total memory taken by all the pools
-		, .max_blocks			= 0xFFFF 		// this is theoretycal/ in practice max pool byte size is an overarching constant
+		, .max_blocks			= 0xFFFF 		// this is theoretical/ in practice max pool byte size is an overarching constant
 		, .max_chunk_size		= 0xFFFF		// this defines max block size in bytes
 		, .max_chunk_count		= 0xFFFF
 		, .max_pool_byte_size   = 10 * 0xFFFF   //  total pool size
